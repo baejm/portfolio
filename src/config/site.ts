@@ -20,13 +20,13 @@ export const MAIN_NAV: NavItem[] = [
     href: "/",
   },
   {
-    title: "Components",
-    href: "/components",
-  },
-  {
     title: "Blog",
-    href: "/blog",
+    href: "https://bangj.tistory.com/",
   },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  // },
   // {
   //   title: "Sponsors",
   //   href: "/sponsors",

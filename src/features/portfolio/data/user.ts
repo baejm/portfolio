@@ -1,78 +1,56 @@
 import type { User } from "@/features/portfolio/types/user";
 
 export const USER = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "배정민",
+  lastName: "배",
+  displayName: "배정민",
+  username: "baejm",
   gender: "male",
-  pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  pronouns: "남성",
+  bio: "퍼블리싱을 기반으로 프론트엔드 영역까지 확장해온 개발자입니다.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
+    "퍼블리싱을 기반으로 프론트엔드 영역까지 확장해온 개발자입니다.",
+    "Publishing · Frontend",
+    "Next.js · React · TypeScript",
+    "Vuejs · Nuxt · Javascript",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
-  jobs: [
-    {
-      title: "Senior Frontend Developer & UI Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-    },
-    {
-      title: "Design Engineer",
-      company: "Shadcraft",
-      website: "https://shadcraft.com",
-    },
-  ],
-  //   about: `
-  // Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
 
-  // With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+  address: "서울 노원구",
+  phoneNumber: "KzgyMTA2Mjc0ODEwMw==",
+  email: "anVrbWFuQG5hdmVyLmNvbQ==",
+  website: "https://TODO-your-domain.com", // 없으면 Vercel 배포 URL
 
-  // One of my key projects, [ZaDark](https://zadark.com), launched in 2022, enhances the Zalo experience on PC and Web, surpassing 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark) and reaching 20k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) (as of Sep 2025).
+  jobTitle: "포트폴리오",
+  jobs: [{ title: "퍼블리셔/프론트엔드", company: "", website: "" }],
 
-  // I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 4k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker) and was selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort.
-
-  // Let's connect and collaborate!
-  //   `,
   about: `
-- **Design Engineer** with 5+ years of experience, known for pixel-perfect execution and strong attention to small details.
-- Skilled in **Next.js**, **React**, **TypeScript**, and modern front-end technologies; building high-quality, user-centric web and mobile applications.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted personal projects.
-- Creator of [ZaDark](https://zadark.com) (2022): enhances the Zalo experience on PC & Web
-  - 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark)
-  - 30k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob)
-- Creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com): iOS-like wheel picker with inertia scrolling & infinite loop
-  - 10k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker)
-  - [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort
+- 퍼블리싱 실무 경험을 바탕으로 프론트엔드 영역까지 확장해온 웹 개발자
+- HTML/CSS 기반 마크업과 반응형 퍼블리싱을 주력으로 UI 구현을 담당
+- React·Next.js를 활용한 화면 개발과 인터랙션 구현을 병행하고 있습니다.
+
+**관심 영역**
+- 디자인 의도를 정확히 반영하는 UI 구현
+- 화면 단위 UI 설계와 인터랙션 구현
+- 변경에 유연한 구조와 스타일 관리 방식
+
+**Role Focus**
+- UI Publishing / Markup • Frontend UI Development
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?v=5",
-  namePronunciationUrl: "/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+
+  avatar: "/images/iam.png",
+  ogImage: "/images/iam4.png",
+
+  // ✅ 발음 오디오 (없으면 빈 값 or 파일 제거)
+  namePronunciationUrl: "",
+
+  // ✅ 기타
+  timeZone: "Asia/Seoul",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "frontend developer",
+    "next.js",
+    "react",
+    "typescript",
+    "portfolio",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2026-01-29",
 } satisfies User;

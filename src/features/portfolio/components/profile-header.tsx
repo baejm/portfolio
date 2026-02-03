@@ -44,9 +44,9 @@ export function ProfileHeader() {
       <div className="flex flex-1 flex-col">
         <div className="flex grow items-end pb-1 pl-4">
           <div className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800">
-            {"text-3xl "}
-            <span className="inline dark:hidden">text-zinc-950</span>
-            <span className="hidden dark:inline">text-zinc-50</span>
+            {"반응형 퍼블리싱 "}
+            <span className="inline dark:hidden">React 기반 화면 개발</span>
+            <span className="hidden dark:inline">인터랙션 구현</span>
             {" font-medium"}
           </div>
         </div>

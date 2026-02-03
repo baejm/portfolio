@@ -37,12 +37,18 @@ export function Nav({
 
 export function NavItem({
   active,
+  href,
   ...props
 }: React.ComponentProps<typeof Link> & {
   active?: boolean;
 }) {
+  const isExternal = typeof href === "string" && href.startsWith("http");
+
   return (
     <Link
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={cn(
         "font-mono text-sm font-medium text-muted-foreground transition-[color] duration-300",
         active && "text-foreground"

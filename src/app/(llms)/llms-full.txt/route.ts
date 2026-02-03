@@ -6,7 +6,7 @@ import { getLLMText } from "@/features/blog/lib/get-llm-text";
 import { AWARDS } from "@/features/portfolio/data/awards";
 import { CERTIFICATIONS } from "@/features/portfolio/data/certifications";
 import { EXPERIENCES } from "@/features/portfolio/data/experiences";
-import { PROJECTS } from "@/features/portfolio/data/projects";
+import { PROJECT_CARDS as PROJECTS } from "@/features/portfolio/data/projects";
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links";
 import { TECH_STACK } from "@/features/portfolio/data/tech-stack";
 import { USER } from "@/features/portfolio/data/user";
@@ -48,11 +48,19 @@ ${EXPERIENCES.map((item) =>
 const projectsText = `## Projects
 
 ${PROJECTS.map((item) => {
-  const skills = `\n\nSkills: ${item.skills.join(", ")}`;
-  const description = item.description ? `\n\n${item.description.trim()}` : "";
-  return `### ${item.title}\n\nProject URL: ${item.link}${skills}${description}`;
-}).join("\n\n")}
-`;
+  const tech = item.tech?.length ? `\nTech: ${item.tech.join(", ")}` : "";
+
+  const description = item.summary?.trim() ? `\n\n${item.summary.trim()}` : "";
+
+  const urls = item.links?.length
+    ? `\nProject URL: ${item.links
+        .map((l) => l.href)
+        .filter(Boolean)
+        .join(", ")}`
+    : "";
+
+  return `### ${item.title}${urls}${tech}${description}`;
+}).join("\n\n")}`;
 
 const awardsText = `## Awards
 

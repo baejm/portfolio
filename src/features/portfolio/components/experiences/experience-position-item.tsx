@@ -96,7 +96,15 @@ export function ExperiencePositionItem({
         <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
           {position.description && (
             <ProseMono className="pt-2 pl-9">
-              <Markdown>{position.description}</Markdown>
+              <ul className="list-disc space-y-1 pl-5">
+                {position.description
+                  .split("\n")
+                  .map((l) => l.trim())
+                  .filter(Boolean)
+                  .map((line, idx) => (
+                    <li key={idx}>{line.replace(/^-+\s*/, "")}</li>
+                  ))}
+              </ul>
             </ProseMono>
           )}
         </CollapsibleContent>

@@ -74,7 +74,7 @@ export function CurrentLocalTimeItem({ timeZone }: CurrentLocalTimeItemProps) {
 
       let diff = "";
       if (hoursDiff < 1) {
-        diff = " // same time";
+        diff = "";
       } else {
         const hours = Math.floor(hoursDiff);
         const isAhead = targetOffset > viewerOffset;

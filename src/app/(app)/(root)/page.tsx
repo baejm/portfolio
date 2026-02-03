@@ -11,11 +11,12 @@ import { GitHubContributions } from "@/features/portfolio/components/github-cont
 import { Overview } from "@/features/portfolio/components/overview";
 import { ProfileCover } from "@/features/portfolio/components/profile-cover";
 import { ProfileHeader } from "@/features/portfolio/components/profile-header";
-import { Projects } from "@/features/portfolio/components/projects";
+import { ProjectGrid } from "@/features/portfolio/components/projects";
 import { SocialLinks } from "@/features/portfolio/components/social-links";
 import { Sponsors } from "@/features/portfolio/components/sponsors";
 import { TechStack } from "@/features/portfolio/components/tech-stack";
 import { TestimonialsMarquee } from "@/features/portfolio/components/testimonials-marquee";
+import { PROJECT_CARDS } from "@/features/portfolio/data/projects";
 import { USER } from "@/features/portfolio/data/user";
 import { cn } from "@/lib/utils";
 
@@ -43,8 +44,8 @@ export default function Page() {
         <About />
         <div className="flex h-4 w-full border-x border-edge" />
 
-        <TestimonialsMarquee />
-        <div className="flex h-4 w-full border-x border-edge" />
+        {/* <TestimonialsMarquee /> */}
+        {/* <div className="flex h-4 w-full border-x border-edge" /> */}
 
         <GitHubContributions />
         <Separator />
@@ -52,29 +53,30 @@ export default function Page() {
         <TechStack />
         <Separator />
 
-        <Components />
-        <Separator />
+        {/* <Components />
+        <Separator /> */}
 
-        <Blog />
+        {/* <Blog /> */}
         <Separator />
 
         <Experiences />
         <Separator />
 
-        <Projects />
+        {/* <Projects /> */}
+        <ProjectGrid projects={PROJECT_CARDS} />
         <Separator />
 
-        <Awards />
+        {/* <Awards />
         <Separator />
 
         <Certifications />
-        <Separator />
-
+        <Separator /> */}
+        {/* 
         <Bookmarks />
-        <Separator />
+        <Separator /> */}
 
-        <Sponsors />
-        <Separator />
+        {/* <Sponsors />
+        <Separator /> */}
       </div>
     </>
   );
