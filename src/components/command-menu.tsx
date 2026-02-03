@@ -129,7 +129,7 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
   href: item.href,
-  iconImage: item.icon,
+  iconImage: item.iconLight,
   openInNewTab: true,
 }));
 
