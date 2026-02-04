@@ -19,7 +19,6 @@ import {
   SunMediumIcon,
   TextIcon,
   TextInitialIcon,
-  TriangleDashedIcon,
   TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -352,20 +351,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
               <TypeIcon />
               Copy Logotype as SVG
             </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
           </CommandGroup>
 
           <CommandGroup heading="Theme">
@@ -497,9 +482,6 @@ function buildCommandMetaMap() {
     commandKind: "command",
   });
   commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Download Brand Assets", {
     commandKind: "command",
   });
 

@@ -1,0 +1,13 @@
+﻿{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"]
+  },
+  "include": [
+    "src/scripts/**/*.mts",
+    "src/registry/**/*.ts",
+    "src/registry/**/*.tsx"
+  ]
+}

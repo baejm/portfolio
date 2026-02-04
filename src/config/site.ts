@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/nav";
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://chanhdai.com",
+  url: process.env.APP_URL || "https://portfolio-seven-xi-33.vercel.app",
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -33,11 +33,11 @@ export const MAIN_NAV: NavItem[] = [
   // },
 ];
 
-export const GITHUB_USERNAME = "ncdai";
-export const SOURCE_CODE_GITHUB_REPO = "baejm";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/baejm";
+export const GITHUB_USERNAME = "baejm";
+export const SOURCE_CODE_GITHUB_REPO = "baejm/portfolio";
+export const SOURCE_CODE_GITHUB_URL = "https://github.com/baejm/portfolio";
 
-export const SPONSORSHIP_URL = "https://github.com/sponsors/ncdai";
+export const SPONSORSHIP_URL = "https://github.com/sponsors/baejm";
 
 export const UTM_PARAMS = {
   utm_source: "baejm",

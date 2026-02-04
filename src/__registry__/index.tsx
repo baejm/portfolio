@@ -57,7 +57,7 @@ export const Index: Record<string, any> = {
   },
   "apple-hello-effect": {
     name: "apple-hello-effect",
-    description: "Create a Xin chào and Hello writing effect inspired by Apple using Motion for React.",
+    description: "Create a Xin ch횪o and Hello writing effect inspired by Apple using Motion for React.",
     type: "registry:component",
     files: [{
       path: "src/registry/apple-hello-effect/apple-hello-effect.tsx",

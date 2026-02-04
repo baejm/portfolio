@@ -42,21 +42,21 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    template: `%s – ${SITE_INFO.name}`,
-    default: `${USER.displayName} – ${USER.jobTitle}`,
+    template: `%s - ${SITE_INFO.name}`,
+    default: `${USER.displayName} - ${USER.jobTitle}`,
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "bjm",
+      name: USER.displayName,
       url: SITE_INFO.url,
     },
   ],
-  creator: "bjm",
+  creator: USER.username,
   openGraph: {
     siteName: SITE_INFO.name,
-    url: "/",
+    url: new URL("/", SITE_INFO.url).toString(),
     type: "profile",
     locale: "ko_KR",
     firstName: USER.firstName,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     gender: USER.gender,
     images: [
       {
-        url: SITE_INFO.ogImage,
+        url: new URL(SITE_INFO.ogImage, SITE_INFO.url).toString(),
         width: 1200,
         height: 630,
         alt: SITE_INFO.name,
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@jukman", // Twitter username
-    images: [SITE_INFO.ogImage],
+    creator: "@baejm", // Twitter username
+    images: [new URL(SITE_INFO.ogImage, SITE_INFO.url).toString()],
   },
   icons: {
     icon: [

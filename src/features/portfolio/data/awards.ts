@@ -1,4 +1,4 @@
-import type { Award } from "../types/awards";
+﻿import type { Award } from "../types/awards";
 
 export const AWARDS: Award[] = [
   {
@@ -8,7 +8,7 @@ export const AWARDS: Award[] = [
     date: "2014-05",
     grade: "Grade 8",
     description:
-      "- Field: Creative Software\n- Project: Website Hành Trình Khám Phá Miền Tây",
+      "- Field: Creative Software\n- Project: Website H횪nh Tr챙nh Kh찼m Ph찼 Mi沼걆 T창y",
     referenceLink:
       "https://drive.google.com/file/d/16bia3XoeVbSlfvg4FzVapQf3LVI8wUA-/view?usp=sharing",
   },
@@ -19,7 +19,7 @@ export const AWARDS: Award[] = [
     date: "2014-09",
     grade: "Grade 8",
     description:
-      "- Organized in Hanoi, Viet Nam\n- Field: Creative Software\n- Project: Website Hành Trình Khám Phá Miền Tây",
+      "- Organized in Hanoi, Viet Nam\n- Field: Creative Software\n- Project: Website H횪nh Tr챙nh Kh찼m Ph찼 Mi沼걆 T창y",
     referenceLink:
       "https://drive.google.com/file/d/16OOVuKBxFAnROU-pmhkDFkbljkmeO-kc/view?usp=sharing",
   },
@@ -171,7 +171,7 @@ export const AWARDS: Award[] = [
     date: "2017-10",
     grade: "Grade 11",
     description:
-      "- Field: Software\n- Project: We Study All — Multi-Platform Learning Support Tool",
+      "- Field: Software\n- Project: We Study All ??Multi-Platform Learning Support Tool",
     referenceLink:
       "https://drive.google.com/file/d/1VLzOpISa2D6J7trxfb4bLzy8Dg8rzm3i/view?usp=sharing",
   },
@@ -259,7 +259,7 @@ export const AWARDS: Award[] = [
     date: "2019-05",
     grade: "University",
     description:
-      "- Organized by University of Economics and Law — VNUHCM\n- Project: [Penphy](https://www.youtube.com/watch?v=EdU7rUO-UA4) — Self Development Social Network",
+      "- Organized by University of Economics and Law ??VNUHCM\n- Project: [Penphy](https://www.youtube.com/watch?v=EdU7rUO-UA4) ??Self Development Social Network",
     referenceLink:
       "https://drive.google.com/file/d/1A_bwayALMZIfd12wL85SVGwAHD8lJjgh/view?usp=sharing",
   },
@@ -277,11 +277,11 @@ export const AWARDS: Award[] = [
   {
     id: "05e1c61b-6dc1-11f0-8000-679dd01e0504",
     prize: "Summer 2025 Cohort",
-    title: "▲Vercel OSS Program",
+    title: "?쾈ercel OSS Program",
     date: "2025-07",
     grade: "Personal Project",
     description:
-      "- Selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort\n- Received $3,600 in platform credits, OSS Starter Pack, and priority community support\n- Project: [React Wheel Picker](https://react-wheel-picker.chanhdai.com)",
+      "- Selected for [?쾈ercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort\n- Received $3,600 in platform credits, OSS Starter Pack, and priority community support\n- Project: [Portfolio](https://portfolio-seven-xi-33.vercel.app)",
     referenceLink:
       "https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker",
   },

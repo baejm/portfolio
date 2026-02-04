@@ -1,24 +1,18 @@
 {
-  "name": "chanhdai.com",
+  "name": "baejm-portfolio",
   "version": "0.1.0",
-  "description": "A minimal, pixel-perfect dev portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "description": "Personal portfolio website.",
+  "homepage": "https://portfolio-seven-xi-33.vercel.app",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "배정민",
+    "email": "jukman@naver.com",
+    "url": "https://github.com/baejm"
   },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
+  "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/baejm/portfolio.git"
   },
   "scripts": {
     "dev": "next dev -p 1408",
