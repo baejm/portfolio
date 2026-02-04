@@ -50,8 +50,8 @@ export async function generateMetadata({
 
   const { title, description, image, createdAt, updatedAt } = post.metadata;
 
-  const postUrl = `/components/${post.slug}`;
-  const ogImage = image || `/og/simple?title=${encodeURIComponent(title)}`;
+  const postUrl = new URL(`/components/${post.slug}`, SITE_INFO.url).toString();
+  const ogImage = new URL(SITE_INFO.ogImage, SITE_INFO.url).toString();
 
   return {
     title,
@@ -64,12 +64,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: new Date(createdAt).toISOString(),
       modifiedTime: new Date(updatedAt).toISOString(),
-      images: {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: title,
-      },
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -84,10 +86,8 @@ function getPageJsonLd(post: Post): WithContext<PageSchema> {
     "@type": "BlogPosting",
     headline: post.metadata.title,
     description: post.metadata.description,
-    image:
-      post.metadata.image ||
-      `/og/simple?title=${encodeURIComponent(post.metadata.title)}`,
-    url: `${SITE_INFO.url}/components/${post.slug}`,
+    image: new URL(SITE_INFO.ogImage, SITE_INFO.url).toString(),
+    url: new URL(`/components/${post.slug}`, SITE_INFO.url).toString(),
     datePublished: new Date(post.metadata.createdAt).toISOString(),
     dateModified: new Date(post.metadata.updatedAt).toISOString(),
     author: {
