@@ -33,7 +33,7 @@ export function ProjectGrid({ projects }: { projects: ProjectCard[] }) {
       <section className="space-y-4 bg-black p-4 pt-0">
         <div className="flex items-end justify-between"></div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((p) => (
             <article
               key={p.id}

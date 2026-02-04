@@ -17,7 +17,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     media: {
       type: "video",
       src: "/media/run-crew.mp4",
-      poster: "/media/run-crew-poster.jpg",
+      // poster: "/media/run-crew-poster.jpg",
     },
     links: [
       { label: "사이트", href: "https://nuxt3-crew2.web.app/", kind: "site" },
@@ -285,7 +285,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     media: {
       type: "video",
       src: "/media/mozaiq.mp4",
-      poster: "/media/mozaiq-poster.jpg",
+      // poster: "/media/mozaiq-poster.jpg",
     },
     links: [
       {

@@ -18,7 +18,7 @@ export const USER = {
   address: "서울 노원구",
   phoneNumber: "KzgyMTA2Mjc0ODEwMw==",
   email: "anVrbWFuQG5hdmVyLmNvbQ==",
-  website: "https://TODO-your-domain.com", // 없으면 Vercel 배포 URL
+  website: "https://portfolio-seven-xi-33.vercel.app/",
 
   jobTitle: "포트폴리오",
   jobs: [{ title: "퍼블리셔/프론트엔드", company: "", website: "" }],

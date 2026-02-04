@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: SITE_INFO.name,
     url: "/",
     type: "profile",
-    locale: "en_US",
+    locale: "ko_KR",
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
@@ -74,22 +74,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@iamncdai", // Twitter username
+    creator: "@jukman", // Twitter username
     images: [SITE_INFO.ogImage],
   },
   icons: {
     icon: [
       {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
+        url: "/favicon.svg",
         sizes: "any",
       },
       {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
+        url: "/favicon.svg",
         type: "image/svg+xml",
       },
     ],
     apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
+      url: "/favicon.svg",
       type: "image/png",
       sizes: "180x180",
     },
