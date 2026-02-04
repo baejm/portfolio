@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getTableOfContents } from "fumadocs-core/content/toc";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
