@@ -1,4 +1,5 @@
-import {
+﻿import {
+  LayersIcon,
   LinkIcon,
   MapPinIcon,
   MarsIcon,
@@ -91,6 +92,69 @@ export function Overview() {
             <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
             <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
               {USER.pronouns}
+            </IntroItemContent>
+          </IntroItem>
+
+          <IntroItem>
+            <IntroItemIcon>
+              <LayersIcon />
+            </IntroItemIcon>
+            <IntroItemContent className="flex flex-wrap items-center gap-1">
+              <span className="inline-flex items-center gap-0.5">
+                <img
+                  src="/images/tech/react-light.svg"
+                  alt="React"
+                  className="size-4 dark:hidden"
+                />
+                <img
+                  src="/images/tech/react-dark.svg"
+                  alt="React"
+                  className="hidden size-4 dark:inline"
+                />
+                React
+              </span>
+              <span className="px-0.5 text-muted-foreground">·</span>
+              <span className="inline-flex items-center gap-0.5">
+                <img
+                  src="/images/tech/nextjs-light.svg"
+                  alt="Next.js"
+                  className="size-4 dark:hidden"
+                />
+                <img
+                  src="/images/tech/nextjs-dark.svg"
+                  alt="Next.js"
+                  className="hidden size-4 dark:inline"
+                />
+                Next.js
+              </span>
+              <span className="px-0.5 text-muted-foreground">·</span>
+              <span className="inline-flex items-center gap-0.5">
+                <img
+                  src="/images/tech/vuejs-light.svg"
+                  alt="Vue"
+                  className="size-4 dark:hidden"
+                />
+                <img
+                  src="/images/tech/vuejs-dark.svg"
+                  alt="Vue"
+                  className="hidden size-4 dark:inline"
+                />
+                Vue
+              </span>
+              <span className="px-0.5 text-muted-foreground">·</span>
+              <span className="inline-flex items-center gap-0.5">
+                <img
+                  src="/images/tech/nuxt-light.svg"
+                  alt="Nuxt"
+                  className="size-4 dark:hidden"
+                />
+                <img
+                  src="/images/tech/nuxt-dark.svg"
+                  alt="Nuxt"
+                  className="hidden size-4 dark:inline"
+                />
+                Nuxt
+              </span>
             </IntroItemContent>
           </IntroItem>
         </div>

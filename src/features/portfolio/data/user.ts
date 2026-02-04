@@ -6,7 +6,7 @@ export const USER = {
   displayName: "배정민",
   username: "baejm",
   gender: "male",
-  pronouns: "그/그의",
+  pronouns: "남성",
   bio: "프론트엔드 개발자입니다.",
   flipSentences: [
     "퍼블리싱을 기반으로 프론트엔드 영역까지 확장해온 개발자입니다.",
