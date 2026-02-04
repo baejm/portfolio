@@ -8,15 +8,19 @@ export const USER = {
   gender: "male",
   pronouns: "그/그의",
   bio: "프론트엔드 개발자입니다.",
-  flipSentences: ["프론트엔드 개발자", "Next.js · React · TypeScript"],
+  flipSentences: [
+    "퍼블리싱을 기반으로 프론트엔드 영역까지 확장해온 개발자입니다.",
+    "Next.js · React · TypeScript",
+    "Publishing · Frontend",
+  ],
 
   address: "Seoul, KR",
   phoneNumber: "",
   email: "anVrbWFuQG5hdmVyLmNvbQ==",
   website: "https://portfolio-seven-xi-33.vercel.app/",
 
-  jobTitle: "Frontend Developer",
-  jobs: [{ title: "Frontend Developer", company: "", website: "" }],
+  jobTitle: "웹 퍼블리셔",
+  jobs: [{ title: "웹 퍼블리셔", company: "", website: "" }],
 
   about: `
 - 사용자 경험을 고려한 UI 구현에 집중합니다.

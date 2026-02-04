@@ -3,6 +3,7 @@ import {
   MapPinIcon,
   MarsIcon,
   NonBinaryIcon,
+  SparklesIcon,
   VenusIcon,
 } from "lucide-react";
 
@@ -12,7 +13,6 @@ import { cn } from "@/lib/utils";
 import { urlToName } from "@/utils/url";
 
 import { Panel, PanelContent } from "../panel";
-import { CurrentLocalTimeItem } from "./current-local-time-item";
 import { EmailItem } from "./email-item";
 import {
   IntroItem,
@@ -60,9 +60,16 @@ export function Overview() {
             </IntroItemContent>
           </IntroItem>
 
-          <CurrentLocalTimeItem timeZone={USER.timeZone} />
+          <IntroItem>
+            <IntroItemIcon>
+              <SparklesIcon />
+            </IntroItemIcon>
+            <IntroItemContent>퍼블리싱 · 프론트엔드 신입</IntroItemContent>
+          </IntroItem>
 
-          <PhoneItem phoneNumber={USER.phoneNumber} />
+          {USER.phoneNumber ? (
+            <PhoneItem phoneNumber={USER.phoneNumber} />
+          ) : null}
 
           <EmailItem email={USER.email} />
 

@@ -9,4 +9,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     description: "BJM github",
     href: "https://github.com/baejm",
   },
+  {
+    iconLight: "/images/tech/tistory.svg",
+    iconDark: "/images/tech/tistory.svg",
+    title: "Blog",
+    description: "Tistory blog",
+    href: "https://bangj.tistory.com/",
+  },
 ];
