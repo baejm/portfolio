@@ -2,111 +2,39 @@ import type { ProjectCard } from "@/types/project-card";
 
 export const PROJECT_CARDS: ProjectCard[] = [
   {
-    id: "run-crew",
-    title: "RUN-Crew 러닝 신청 서비스",
-    period: { start: "2024.10", end: "2024.12" },
+    id: "global-nomad",
+    title: "GlobalNomad 여행 체험 예약 플랫폼",
+    period: { start: "2025.12", end: "2026.01" },
     summary:
-      "러닝 크루 모집 및 신청을 위한 웹 애플리케이션입니다. Nuxt3 기반 UI 구조 설계와 Firebase 인증/데이터 연동을 구현했습니다.",
+      "여행 체험 상품을 탐색하고 예약할 수 있는 웹 플랫폼으로, 팀 프로젝트로 진행한 프론트엔드 중심 서비스입니다. 최신 React/Next.js 환경에서 화면 구조와 예약 흐름 UI 구현을 담당했습니다.",
     highlights: [
-      "Nuxt3 기반 화면/컴포넌트 구조 설계",
-      "Firebase 인증 및 데이터 저장 연동",
-      "상태 변화 기반 UI 인터랙션 구현",
-      "반응형 UI 대응",
+      "Next.js(App Router) 기반 서비스 화면 구조 설계",
+      "체험 상세 페이지 및 예약 플로우 UI 구현",
+      "React Query를 활용한 데이터 패칭 및 캐싱 처리",
+      "컴포넌트 단위 설계로 화면 재사용성 및 유지보수성 확보",
+      "팀 협업 환경에서 기획/디자인/백엔드와 연계하여 화면 구현",
     ],
-    tech: ["Nuxt3", "Vue", "Firebase", "Tailwind", "Responsive UI"],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Query",
+      "Tailwind CSS",
+      "Team Collaboration",
+    ],
     media: {
       type: "video",
-      src: "/media/run-crew.mp4",
-      // poster: "/media/run-crew-poster.jpg",
-    },
-    links: [
-      { label: "사이트", href: "https://nuxt3-crew2.web.app/", kind: "site" },
-      {
-        label: "소스",
-        href: "https://github.com/baejm/run-crew",
-        kind: "source",
-      },
-    ],
-    isFeatured: false,
-  },
-  {
-    id: "parking-admin",
-    title: "Parking-Admin 관리자 주차 프로그램",
-    period: { start: "2021.01", end: "2021.04" },
-    summary:
-      "Vue2 기반으로 제작한 관리자용 주차 시스템 UI입니다. 실시간 주차 정보 확인 및 차량/결제 관리를 할 수 있습니다.",
-    highlights: [
-      "Vue2 환경에서 관리자 UI 전반 구축",
-      "실시간 주차 정보 표시 기능 구현",
-      "출차시간·차량정보·금액 확인 및 제어 화면 구현",
-      "Vuex 상태관리 및 Vue-Socket.IO 연동 경험",
-    ],
-    tech: ["Vue2", "Vue-Socket.IO", "Vuex", "Responsive UI"],
-    media: {
-      type: "image",
-      src: "/media/parking-admin-screenshot.gif",
-      alt: "Parking-Admin 관리자 UI",
+      src: "/media/global-nomad.mp4",
     },
     links: [
       {
         label: "사이트",
-        href: "https://baejm.github.io/parking-admin",
+        href: "https://global-nomad-blush.vercel.app/",
         kind: "site",
       },
       {
         label: "소스",
-        href: "https://github.com/baejm/parking-admin",
-        kind: "source",
-      },
-    ],
-  },
-  {
-    id: "blog-nuxt",
-    title: "Blog-Nuxt 개인 블로그",
-    period: { start: "2023.07", end: "2023.08" },
-    summary:
-      "Nuxt 기반으로 제작한 개인 블로그 프로젝트로, 콘텐츠 구조와 화면 레이아웃에 집중한 프론트엔드 중심 프로젝트입니다.",
-    highlights: [
-      "Nuxt 기반 블로그 화면 구조 설계",
-      "게시글 목록 및 상세 페이지 레이아웃 구현",
-      "레이아웃/컴포넌트 분리를 통한 재사용 구조 구성",
-      "퍼블리싱 중심의 UI 구현 및 스타일링",
-    ],
-    tech: ["Nuxt", "Vue", "UI Publishing", "Component Structure"],
-    media: {
-      type: "image",
-      src: "/media/blog-nuxt-screenshot.gif",
-      alt: "Nuxt 기반 개인 블로그 UI",
-    },
-    links: [
-      {
-        label: "소스",
-        href: "https://github.com/baejm/blog-nuxt",
-        kind: "source",
-      },
-    ],
-  },
-  {
-    id: "rolling-team4",
-    title: "Rolling-Team4 협업 UI 프로젝트",
-    period: { start: "2025.07", end: "2025.08" },
-    summary:
-      "팀 프로젝트로 수행한 협업형 웹 애플리케이션입니다. UI/UX 구조 설계 및 컴포넌트 단위 화면 구현에 집중하여 사용자 피드백 기반 롤링페이퍼 기능을 구현했습니다.",
-    highlights: [
-      "팀 기반 UI/UX 설계 및 화면 구조 설계 참여",
-      "컴포넌트 단위 화면 구현 및 상태 관리",
-      "협업 메시지/롤링 기능 구현",
-      "Vue 기반 라이프사이클과 상태 흐름 이해",
-    ],
-    tech: ["Vue", "Vue Router", "Vuex", "Component Driven UI"],
-    media: {
-      type: "video",
-      src: "/media/rolling-team4.mp4",
-    },
-    links: [
-      {
-        label: "소스",
-        href: "https://github.com/yujin-fe/Rolling-team4",
+        href: "https://github.com/baejm/GlobalNomad",
         kind: "source",
       },
     ],
@@ -152,39 +80,38 @@ export const PROJECT_CARDS: ProjectCard[] = [
     ],
     isFeatured: false,
   },
+
   {
-    id: "global-nomad",
-    title: "GlobalNomad 여행 체험 예약 플랫폼",
-    period: { start: "2025.12", end: "2026.01" },
+    id: "rolling-team4",
+    title: "Rolling-Team4 협업 UI 프로젝트",
+    period: { start: "2025.07", end: "2025.08" },
     summary:
-      "여행 체험 상품을 탐색하고 예약할 수 있는 웹 플랫폼으로, 팀 프로젝트로 진행한 프론트엔드 중심 서비스입니다. 최신 React/Next.js 환경에서 화면 구조와 예약 흐름 UI 구현을 담당했습니다.",
+      "팀 프로젝트로 수행한 협업형 웹 애플리케이션입니다. UI/UX 구조 설계 및 컴포넌트 단위 화면 구현에 집중하여 사용자 피드백 기반 롤링페이퍼 기능을 구현했습니다.",
     highlights: [
-      "Next.js(App Router) 기반 서비스 화면 구조 설계",
-      "체험 상세 페이지 및 예약 플로우 UI 구현",
-      "React Query를 활용한 데이터 패칭 및 캐싱 처리",
-      "컴포넌트 단위 설계로 화면 재사용성 및 유지보수성 확보",
-      "팀 협업 환경에서 기획/디자인/백엔드와 연계하여 화면 구현",
+      "팀 기반 UI/UX 설계 및 화면 구조 설계 참여",
+      "컴포넌트 단위 화면 구현 및 상태 관리",
+      "협업 메시지/롤링 기능 구현",
+      "Vue 기반 라이프사이클과 상태 흐름 이해",
     ],
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "React Query",
-      "Tailwind CSS",
-      "Team Collaboration",
-    ],
+    tech: ["Vue", "Vue Router", "Vuex", "Component Driven UI"],
     media: {
       type: "video",
-      src: "/media/global-nomad.mp4",
+      src: "/media/rolling-team4.mp4",
     },
     links: [
       {
+        label: "사이트",
+        href: "https://rolling-team4.vercel.app/",
+        kind: "site",
+      },
+      {
         label: "소스",
-        href: "https://github.com/baejm/GlobalNomad",
+        href: "https://github.com/yujin-fe/Rolling-team4",
         kind: "source",
       },
     ],
   },
+
   {
     id: "shinsegae-point",
     title: "신세계포인트 웹/모바일 서비스",
@@ -292,6 +219,91 @@ export const PROJECT_CARDS: ProjectCard[] = [
         label: "사이트",
         href: "https://mozaiq.co.kr/",
         kind: "site",
+      },
+    ],
+  },
+  {
+    id: "blog-nuxt",
+    title: "Blog-Nuxt 개인 블로그",
+    period: { start: "2023.07", end: "2023.08" },
+    summary:
+      "Nuxt 기반으로 제작한 개인 블로그 프로젝트로, 콘텐츠 구조와 화면 레이아웃에 집중한 프론트엔드 중심 프로젝트입니다.",
+    highlights: [
+      "Nuxt 기반 블로그 화면 구조 설계",
+      "게시글 목록 및 상세 페이지 레이아웃 구현",
+      "레이아웃/컴포넌트 분리를 통한 재사용 구조 구성",
+      "퍼블리싱 중심의 UI 구현 및 스타일링",
+    ],
+    tech: ["Nuxt", "Vue", "UI Publishing", "Component Structure"],
+    media: {
+      type: "image",
+      src: "/media/blog-nuxt-screenshot.gif",
+      alt: "Nuxt 기반 개인 블로그 UI",
+    },
+    links: [
+      {
+        label: "소스",
+        href: "https://github.com/baejm/blog-nuxt",
+        kind: "source",
+      },
+    ],
+  },
+  {
+    id: "run-crew",
+    title: "RUN-Crew 러닝 신청 서비스",
+    period: { start: "2024.10", end: "2024.12" },
+    summary:
+      "러닝 크루 모집 및 신청을 위한 웹 애플리케이션입니다. Nuxt3 기반 UI 구조 설계와 Firebase 인증/데이터 연동을 구현했습니다.",
+    highlights: [
+      "Nuxt3 기반 화면/컴포넌트 구조 설계",
+      "Firebase 인증 및 데이터 저장 연동",
+      "상태 변화 기반 UI 인터랙션 구현",
+      "반응형 UI 대응",
+    ],
+    tech: ["Nuxt3", "Vue", "Firebase", "Tailwind", "Responsive UI"],
+    media: {
+      type: "video",
+      src: "/media/run-crew.mp4",
+      // poster: "/media/run-crew-poster.jpg",
+    },
+    links: [
+      { label: "사이트", href: "https://nuxt3-crew2.web.app/", kind: "site" },
+      {
+        label: "소스",
+        href: "https://github.com/baejm/run-crew",
+        kind: "source",
+      },
+    ],
+    isFeatured: false,
+  },
+  {
+    id: "parking-admin",
+    title: "Parking-Admin 관리자 주차 프로그램",
+    period: { start: "2021.01", end: "2021.04" },
+    summary:
+      "Vue2 기반으로 제작한 관리자용 주차 시스템 UI입니다. 실시간 주차 정보 확인 및 차량/결제 관리를 할 수 있습니다.",
+    highlights: [
+      "Vue2 환경에서 관리자 UI 전반 구축",
+      "실시간 주차 정보 표시 기능 구현",
+      "출차시간·차량정보·금액 확인 및 제어 화면 구현",
+      "Vuex 상태관리 및 Vue-Socket.IO 연동 경험",
+    ],
+    tech: ["Vue2", "Vue-Socket.IO", "Vuex", "Responsive UI"],
+    media: {
+      type: "image",
+      src: "/media/parking-admin-screenshot.gif",
+      alt: "Parking-Admin 관리자 UI",
+    },
+    links: [
+      {
+        label: "사이트",
+        href: "https://baejm.github.io/parking-admin",
+        kind: "site",
+      },
+      {
+        label: "소스",
+        href: "https://github.com/baejm/parking-admin",
+        kind: "source",
       },
     ],
   },
