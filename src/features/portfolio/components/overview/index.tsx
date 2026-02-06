@@ -1,15 +1,6 @@
-﻿import {
-  LayersIcon,
-  LinkIcon,
-  MapPinIcon,
-  MarsIcon,
-  NonBinaryIcon,
-  SparklesIcon,
-  VenusIcon,
-} from "lucide-react";
+﻿import { LayersIcon, LinkIcon, MapPinIcon, SparklesIcon } from "lucide-react";
 
 import { USER } from "@/features/portfolio/data/user";
-import type { User } from "@/features/portfolio/types/user";
 import { cn } from "@/lib/utils";
 import { urlToName } from "@/utils/url";
 
@@ -68,10 +59,6 @@ export function Overview() {
             <IntroItemContent>퍼블리싱 · 프론트엔드 신입</IntroItemContent>
           </IntroItem>
 
-          {USER.phoneNumber ? (
-            <PhoneItem phoneNumber={USER.phoneNumber} />
-          ) : null}
-
           <EmailItem email={USER.email} />
 
           <IntroItem>
@@ -88,12 +75,9 @@ export function Overview() {
             </IntroItemContent>
           </IntroItem>
 
-          <IntroItem>
-            <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
-            <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
-              {USER.pronouns}
-            </IntroItemContent>
-          </IntroItem>
+          {USER.phoneNumber ? (
+            <PhoneItem phoneNumber={USER.phoneNumber} />
+          ) : null}
 
           <IntroItem>
             <IntroItemIcon>
@@ -163,15 +147,4 @@ export function Overview() {
       <div className="absolute top-0 left-[calc(50%-var(--spacing)*2-1px)] -z-1 h-full border-r border-edge/80 max-sm:hidden" />
     </Panel>
   );
-}
-
-function getGenderIcon(gender: User["gender"]) {
-  switch (gender) {
-    case "male":
-      return <MarsIcon />;
-    case "female":
-      return <VenusIcon />;
-    case "non-binary":
-      return <NonBinaryIcon />;
-  }
 }

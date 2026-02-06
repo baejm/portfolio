@@ -15,7 +15,7 @@ export const USER = {
   ],
 
   address: "Seoul, KR",
-  phoneNumber: "",
+  phoneNumber: "KzgyMTA2Mjc0ODEwMw==",
   email: "anVrbWFuQG5hdmVyLmNvbQ==",
   website: "https://portfolio-seven-xi-33.vercel.app/",
 
