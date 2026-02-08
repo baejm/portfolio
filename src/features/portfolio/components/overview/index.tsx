@@ -14,6 +14,7 @@ import {
 } from "./intro-item";
 import { JobItem } from "./job-item";
 import { PhoneItem } from "./phone-item";
+import { VisitCount } from "./visit-count";
 
 export function Overview() {
   return (
@@ -141,6 +142,8 @@ export function Overview() {
               </span>
             </IntroItemContent>
           </IntroItem>
+
+          <VisitCount />
         </div>
       </PanelContent>
 
