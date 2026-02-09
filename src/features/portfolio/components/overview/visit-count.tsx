@@ -10,6 +10,7 @@ type VisitCountResponse = {
   publicCount: number;
   todayCount: number;
   todayUnique: number;
+  ignored: boolean;
 };
 
 export function VisitCount() {
@@ -17,6 +18,7 @@ export function VisitCount() {
   const [publicCount, setPublicCount] = useState<number | null>(null);
   const [todayCount, setTodayCount] = useState<number | null>(null);
   const [todayUnique, setTodayUnique] = useState<number | null>(null);
+  const [ignored, setIgnored] = useState<boolean | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -31,6 +33,7 @@ export function VisitCount() {
           setPublicCount(data.publicCount);
           setTodayCount(data.todayCount);
           setTodayUnique(data.todayUnique);
+          setIgnored(data.ignored);
         }
       } catch {
         // noop
@@ -48,13 +51,14 @@ export function VisitCount() {
     count === null ||
     publicCount === null ||
     todayCount === null ||
-    todayUnique === null
+    todayUnique === null ||
+    ignored === null
   ) {
     return null;
   }
 
   // Only show count for the owner (ignore cookie set)
-  if (publicCount === count) {
+  if (!ignored) {
     return null;
   }
 
@@ -64,7 +68,7 @@ export function VisitCount() {
         <EyeIcon />
       </IntroItemIcon>
       <IntroItemContent
-        aria-label={`총 방문자수 ${count.toLocaleString()}명 (외부 ${publicCount.toLocaleString()}명), 오늘 ${todayCount.toLocaleString()}명 (외부 ${todayUnique.toLocaleString()}명)`}
+        aria-label={`총 방문자수 ${count.toLocaleString()}명(내 제외 ${publicCount.toLocaleString()}명, 오늘 ${todayCount.toLocaleString()}명(내 제외 ${todayUnique.toLocaleString()}명))`}
       >
         총 {count.toLocaleString()}명({publicCount.toLocaleString()}명) · 오늘{" "}
         {todayCount.toLocaleString()}명({todayUnique.toLocaleString()}명)
