@@ -1,7 +1,7 @@
 ﻿"use client";
 
+import { useConsentManager } from "@c15t/nextjs";
 import { ClientSideOptionsProvider } from "@c15t/nextjs/client";
-import { useConsentManager } from "@c15t/react";
 import { posthog } from "posthog-js";
 import { useEffect, useRef } from "react";
 
