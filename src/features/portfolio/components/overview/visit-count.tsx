@@ -8,11 +8,15 @@ import { IntroItem, IntroItemContent, IntroItemIcon } from "./intro-item";
 type VisitCountResponse = {
   count: number;
   publicCount: number;
+  todayCount: number;
+  todayUnique: number;
 };
 
 export function VisitCount() {
   const [count, setCount] = useState<number | null>(null);
   const [publicCount, setPublicCount] = useState<number | null>(null);
+  const [todayCount, setTodayCount] = useState<number | null>(null);
+  const [todayUnique, setTodayUnique] = useState<number | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -25,6 +29,8 @@ export function VisitCount() {
         if (isMounted) {
           setCount(data.count);
           setPublicCount(data.publicCount);
+          setTodayCount(data.todayCount);
+          setTodayUnique(data.todayUnique);
         }
       } catch {
         // noop
@@ -38,7 +44,12 @@ export function VisitCount() {
     };
   }, []);
 
-  if (count === null || publicCount === null) {
+  if (
+    count === null ||
+    publicCount === null ||
+    todayCount === null ||
+    todayUnique === null
+  ) {
     return null;
   }
 
@@ -53,9 +64,10 @@ export function VisitCount() {
         <EyeIcon />
       </IntroItemIcon>
       <IntroItemContent
-        aria-label={`방문자수 ${count.toLocaleString()}명 (내 접속 제외 ${publicCount.toLocaleString()}명)`}
+        aria-label={`총 방문자수 ${count.toLocaleString()}명 (외부 ${publicCount.toLocaleString()}명), 오늘 ${todayCount.toLocaleString()}명 (외부 ${todayUnique.toLocaleString()}명)`}
       >
-        방문자수 {count.toLocaleString()}명({publicCount.toLocaleString()}명)
+        총 {count.toLocaleString()}명({publicCount.toLocaleString()}명) · 오늘{" "}
+        {todayCount.toLocaleString()}명({todayUnique.toLocaleString()}명)
       </IntroItemContent>
     </IntroItem>
   );
