@@ -6,6 +6,7 @@ const VISIT_COUNT_KEY = "site:visits";
 const PUBLIC_VISIT_COUNT_KEY = "site:visits:public";
 const IGNORE_COOKIE = "visit_ignore";
 const UID_COOKIE = "visit_uid";
+const HISTORY_DAYS = 10;
 
 const redis = Redis.fromEnv();
 
@@ -30,9 +31,14 @@ function getRedisClient() {
 export async function GET() {
   const cookieStore = await cookies();
   const shouldIgnore = cookieStore.get(IGNORE_COOKIE)?.value === "1";
-  const today = new Date().toISOString().slice(0, 10);
-  const todayPublicKey = `site:visits:public:${today}`;
-  const todayUniqueKey = `site:visits:public:unique:${today}`;
+  const today = new Date();
+  const dates = Array.from({ length: HISTORY_DAYS }, (_, index) => {
+    const date = new Date(today);
+    date.setUTCDate(today.getUTCDate() - index);
+    return date.toISOString().slice(0, 10);
+  });
+  const todayPublicKey = `site:visits:public:${dates[0]}`;
+  const todayUniqueKey = `site:visits:public:unique:${dates[0]}`;
 
   const { client, source } = getRedisClient();
 
@@ -42,6 +48,7 @@ export async function GET() {
       publicCount: 0,
       todayCount: 0,
       todayUnique: 0,
+      history: [],
       ignored: shouldIgnore,
       source,
     });
@@ -64,18 +71,28 @@ export async function GET() {
     await client.incr(VISIT_COUNT_KEY);
   }
 
-  const [count, publicCount, todayCount, todayUnique] = await Promise.all([
+  const publicKeys = dates.map((date) => `site:visits:public:${date}`);
+  const uniqueKeys = dates.map((date) => `site:visits:public:unique:${date}`);
+
+  const [count, publicCount, publicCounts, uniqueCounts] = await Promise.all([
     client.get<number>(VISIT_COUNT_KEY),
     client.get<number>(PUBLIC_VISIT_COUNT_KEY),
-    client.get<number>(todayPublicKey),
-    client.scard(todayUniqueKey),
+    client.mget<number[]>(...publicKeys),
+    Promise.all(uniqueKeys.map((key) => client.scard(key))),
   ]);
+
+  const history = dates.map((date, index) => ({
+    date,
+    total: publicCounts?.[index] ?? 0,
+    unique: uniqueCounts[index] ?? 0,
+  }));
 
   const response = NextResponse.json({
     count: count ?? 0,
     publicCount: publicCount ?? 0,
-    todayCount: todayCount ?? 0,
-    todayUnique: todayUnique ?? 0,
+    todayCount: history[0]?.total ?? 0,
+    todayUnique: history[0]?.unique ?? 0,
+    history,
     ignored: shouldIgnore,
     source,
   });
