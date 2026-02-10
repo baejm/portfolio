@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 const VISIT_COUNT_KEY = "site:visits";
 const PUBLIC_VISIT_COUNT_KEY = "site:visits:public";
+const OWNER_VISIT_COUNT_KEY = "site:visits:owner";
 const IGNORE_COOKIE = "visit_ignore";
 const UID_COOKIE = "visit_uid";
 const HISTORY_DAYS = 10;
@@ -39,6 +40,8 @@ export async function GET() {
   });
   const todayPublicKey = `site:visits:public:${dates[0]}`;
   const todayUniqueKey = `site:visits:public:unique:${dates[0]}`;
+  const todayOwnerKey = `${OWNER_VISIT_COUNT_KEY}:${dates[0]}`;
+  const todayOwnerUniqueKey = `${OWNER_VISIT_COUNT_KEY}:unique:${dates[0]}`;
 
   const { client, source } = getRedisClient();
 
@@ -68,23 +71,44 @@ export async function GET() {
       client.sadd(todayUniqueKey, uid),
     ]);
   } else {
-    await client.incr(VISIT_COUNT_KEY);
+    await Promise.all([
+      client.incr(VISIT_COUNT_KEY),
+      client.incr(todayOwnerKey),
+      client.sadd(todayOwnerUniqueKey, uid),
+    ]);
   }
 
   const publicKeys = dates.map((date) => `site:visits:public:${date}`);
   const uniqueKeys = dates.map((date) => `site:visits:public:unique:${date}`);
+  const ownerKeys = dates.map((date) => `${OWNER_VISIT_COUNT_KEY}:${date}`);
+  const ownerUniqueKeys = dates.map(
+    (date) => `${OWNER_VISIT_COUNT_KEY}:unique:${date}`
+  );
 
-  const [count, publicCount, publicCounts, uniqueCounts] = await Promise.all([
+  const [
+    count,
+    publicCount,
+    publicCounts,
+    uniqueCounts,
+    ownerCounts,
+    ownerUniqueCounts,
+  ] = await Promise.all([
     client.get<number>(VISIT_COUNT_KEY),
     client.get<number>(PUBLIC_VISIT_COUNT_KEY),
     client.mget<number[]>(...publicKeys),
     Promise.all(uniqueKeys.map((key) => client.scard(key))),
+    client.mget<number[]>(...ownerKeys),
+    Promise.all(ownerUniqueKeys.map((key) => client.scard(key))),
   ]);
 
   const history = dates.map((date, index) => ({
     date,
-    total: publicCounts?.[index] ?? 0,
-    unique: uniqueCounts[index] ?? 0,
+    total:
+      (publicCounts?.[index] ?? 0) +
+      (shouldIgnore ? (ownerCounts?.[index] ?? 0) : 0),
+    unique:
+      (uniqueCounts[index] ?? 0) +
+      (shouldIgnore ? (ownerUniqueCounts[index] ?? 0) : 0),
   }));
 
   const response = NextResponse.json({
