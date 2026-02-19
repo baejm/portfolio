@@ -7,9 +7,8 @@ const PUBLIC_VISIT_COUNT_KEY = "site:visits:public";
 const OWNER_VISIT_COUNT_KEY = "site:visits:owner";
 const IGNORE_COOKIE = "visit_ignore";
 const UID_COOKIE = "visit_uid";
-const HISTORY_DAYS = 10;
-
-const redis = Redis.fromEnv();
+const HISTORY_DAYS = 365;
+const KEY_TTL_SECONDS = (HISTORY_DAYS + 7) * 24 * 60 * 60;
 
 function getRedisClient() {
   if (
@@ -69,12 +68,16 @@ export async function GET() {
       client.incr(PUBLIC_VISIT_COUNT_KEY),
       client.incr(todayPublicKey),
       client.sadd(todayUniqueKey, uid),
+      client.expire(todayPublicKey, KEY_TTL_SECONDS),
+      client.expire(todayUniqueKey, KEY_TTL_SECONDS),
     ]);
   } else {
     await Promise.all([
       client.incr(VISIT_COUNT_KEY),
       client.incr(todayOwnerKey),
       client.sadd(todayOwnerUniqueKey, uid),
+      client.expire(todayOwnerKey, KEY_TTL_SECONDS),
+      client.expire(todayOwnerUniqueKey, KEY_TTL_SECONDS),
     ]);
   }
 
